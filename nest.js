@@ -35,14 +35,14 @@ module.exports = {
             name: "Farmer", 
             body : [Game.WORK, Game.CARRY, Game.MOVE, Game.MOVE], 
             ai : function (creep){
-                var hostile = creep.memory.target
+                var hostile = Game.getObjectById(creep.memory.target_id)
                 if (hostile == undefined || hostile == null){
                     hostile = creep.pos.findNearest(Game.SOURCES_ACTIVE);
                 }
                 if (hostile == undefined || hostile == null){
                     return false;
                 }
-
+                creep.memory.target_id = hostile.id
                 creep.moveTo(hostile);
                 creep.harvest(hostile);
             }
