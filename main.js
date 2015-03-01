@@ -9,7 +9,7 @@ if (!Memory.creepCounter){
 }
 
 if (!Memory.creepNeeds){
-    Memory.creepNeeds = ['archer', 'harvester', 'archer', 'harvester', 'guard'];
+    Memory.creepNeeds = ['harvester'];
 }
 
 var creepNeeds = Memory.creepNeeds;
@@ -53,7 +53,7 @@ for(var name in Game.creeps) {
     console.log(name);
 
     for (var role in nest) {
-        if (creep.memory.role == nest[role].name){
+        if (!creep.spawning && creep.memory.role == nest[role].name){
             nest[role].ai(creep);
         }
 
