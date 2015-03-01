@@ -36,8 +36,9 @@ function findNearest(typetoFind, pos){
         }
     }
     return target;
+    }
+    return null;
 }
 
 module.exports = {creepCost: creepCost,
                   findNearest: findNearest}
-                  
