@@ -36,8 +36,8 @@ for(var spawn in Game.spawns){
 */
         var blueCreepName = creepNeeds.pop();
         var blueCreep = nest[blueCreepName];
-        console.log(blueCreep);
-        console.log(creepNeeds.length);
+        // console.log(blueCreep);
+        // console.log(creepNeeds.length);
         var output = Game.spawns[spawn].createCreep(blueCreep.body, blueCreep.name + " - " + Memory.creepCounter++ , {role: blueCreep.name}); 
         if (output < 0){
             Memory.creepCounter--;

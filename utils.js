@@ -21,5 +21,23 @@ function creepCost(creepSpec){
     return tot;
 }
 
+function findNearest(typetoFind, pos){
+    var target;
+    var distance = 9999;
+    var sources = Room.find(typetoFind);
+    if(sources.length > 0){
 
-module.exports = {creepCost: creepCost}
+    for (var s in sources){
+        var source = sources[s];
+        var sDist = pos.findPathTo(creep).length;
+        if (sDist <= distance){
+            target = source;
+            distance = sDist;
+        }
+    }
+    return target;
+}
+
+module.exports = {creepCost: creepCost,
+                  findNearest: findNearest}
+                  
