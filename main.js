@@ -9,7 +9,7 @@ if (!Memory.creepCounter){
 }
 
 if (!Memory.creepNeeds){
-    Memory.creepNeeds = ['guard', 'harvester'];
+    Memory.creepNeeds = ['archer', 'harvester', 'archer', 'harvester', 'guard'];
 }
 
 var creepNeeds = Memory.creepNeeds;

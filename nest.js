@@ -1,7 +1,7 @@
 module.exports = {
     'guard' : 
         {
-            perc : .2, 
+            perc : .0, 
             name: "Guard", 
             body : [Game.ATTACK, Game.TOUGH, Game.MOVE, Game.MOVE], 
             ai : function (creep){
@@ -11,6 +11,21 @@ module.exports = {
                 }
                 creep.moveTo(hostile);
                 creep.attack(hostile);
+            }
+        },
+
+    'archer' : 
+        {
+            perc : .2, 
+            name: "Archer", 
+            body : [Game.RANGED_ATTACK, Game.TOUGH, Game.MOVE], 
+            ai : function (creep){
+                var hostile = creep.pos.findNearest(Game.HOSTILE_CREEPS);
+                if (hostile == undefined || hostile == null){
+                    return false;
+                }
+                creep.moveTo(hostile);
+                creep.rangedAttack(hostile);
             }
         },
                 
